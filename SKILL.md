@@ -8,33 +8,44 @@ description: |
 
 # Hot News CLI 用法
 
-获取热门新闻的 CLI 工具。
+多平台热榜命令行工具（Python 项目）。
 
 ## 安装
 
 ```bash
-go install github.com/rebanghot/hot_news_cli@latest
+# 克隆项目
+git clone https://github.com/shiwenjin/hot_news_cli.git
+cd hot_news_cli
+
+# 本地安装为 CLI
+pip install -e .
+```
+
+或者使用 uv：
+
+```bash
+uv pip install -e .
 ```
 
 ## 使用
 
 ```bash
-# 查看热门新闻（默认 10 条）
-hot_news_cli
+# 查看热门新闻
+hot-news
 
 # 指定数量
-hot_news_cli -n 20
+hot-news --count 20
 ```
 
 ## 输出示例
 
 ```
-🔥 Hacker News 热门新闻
+🔥 热门新闻
 
-1. Some Interesting Title   Score: 1234   💬 456 comments
+1. Some Interesting Title   💬 456 comments
    🔗 https://example.com
 
-2. Another Great Story      Score: 987    💬 321 comments
+2. Another Great Story      💬 321 comments
    🔗 https://example.com
 
 ...
