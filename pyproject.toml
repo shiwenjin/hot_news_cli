@@ -1,0 +1,32 @@
+[project]
+name = "hot-news-cli"
+version = "0.1.0"
+description = "多平台热榜命令行工具"
+authors = [{name = "Hot News CLI Team"}]
+requires-python = ">=3.9"
+dependencies = [
+    "typer>=0.14.0",
+    "httpx>=0.28.0",
+    "tenacity>=9.0.0",
+    "rich>=14.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.25.0",
+]
+
+[project.scripts]
+hot-news = "hot_news.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hot_news"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
